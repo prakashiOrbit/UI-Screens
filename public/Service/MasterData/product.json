@@ -1,0 +1,60 @@
+{
+  "division": {
+    "name": "Product Header",
+    "formelements": [
+      {
+        "label": "Item Name",
+        "id": "item",
+        "control": "textbox",
+        "validation": "alphanumeric",
+        "disabled": true
+      },
+      {
+        "label": "Item Category",
+        "id": "category",
+        "control": "select",
+        "populateURL": "./Service/PopulateBank.json"
+      },
+      {
+        "label": "Item Subcategory",
+        "id": "subcategory",
+        "control": "select",
+        "populateURL": "./Service/PopulateBank.json"
+      },
+
+      {
+        "label": "Item Description",
+        "id": "description",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "label": "Item Supplier",
+        "id": "supplier",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "label": "Item Size",
+        "id": "size",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "Next",
+        "label": "Next",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "control": "button",
+        "redirect": "polist"
+      }
+    ]
+  }
+}

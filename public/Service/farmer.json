@@ -1,0 +1,70 @@
+{
+  "division": {
+    "name": "PO Header",
+    "formelements": [
+      {
+        "id": "FID",
+        "label": "F ID",
+        "control": "textbox",
+        "validation": "alphanumeric",
+        "disabled": true
+      },
+      {
+        "id": "First Name",
+        "label": "first name",
+        "control": "textbox"
+      },
+      {
+        "id": "Last Name",
+        "label": "lastName",
+        "control": "textbox"
+      },
+      {
+        "id": "Address",
+        "label": "address",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "Aadhar No",
+        "label": "aadhar_no",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "label": "pan",
+        "id": "PAN",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+
+      {
+        "label": "contact",
+        "id": "Contact",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "Bank Details",
+        "label": "bank details",
+        "control": "select",
+        "populateURL": "./Service/PopulateBank.json"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "create",
+        "label": "Create",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "control": "button",
+        "redirect": "polist"
+      }
+    ]
+  }
+}

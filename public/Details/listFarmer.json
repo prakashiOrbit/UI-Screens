@@ -1,0 +1,71 @@
+{
+  "headCells": [
+    {
+      "headerLabel": "F Id",
+      "dataAttribute": "FID",
+      "control": "link"
+    },
+    {
+      "headerLabel": "First Name",
+      "dataAttribute": "firstname"
+    },
+    {
+      "headerLabel": "Last Name",
+      "dataAttribute": "lastname"
+    },
+    {
+      "headerLabel": "Address",
+      "dataAttribute": "address"
+    },
+    {
+      "headerLabel": "Aadhar",
+      "dataAttribute": "aadhar"
+    },
+    {
+      "headerLabel": "PAN",
+      "dataAttribute": "pan"
+    },
+    {
+      "headerLabel": "Contact",
+      "dataAttribute": "contact"
+    }
+  ],
+  "data": [
+    {
+      "id": 1,
+      "firstname": "sahil",
+      "lastname": "lalwani",
+      "address": "bangalorel",
+      "aadhar": "7456874362837856",
+      "pan": "BE6123E",
+      "contact": "3425979825379"
+    },
+    {
+      "id": 2,
+      "firstname": "rakesh",
+      "lastname": "sharma",
+      "address": "trichy",
+      "aadhar": "9956874362837856",
+      "pan": "AP6123E",
+      "contact": "8925979825379"
+    },
+    {
+      "id": 3,
+      "firstname": "krishna",
+      "lastname": "nair",
+      "address": "trichy",
+      "aadhar": "9956874362837856",
+      "pan": "AP6123E",
+      "contact": "89259798"
+    },
+    {
+      "id": 4,
+      "firstname": "ram",
+      "lastname": "ravan",
+      "address": "trichy",
+      "aadhar": "9956874362837856",
+      "pan": "AP6123E",
+      "contact": "892597982"
+    }
+  ]
+}

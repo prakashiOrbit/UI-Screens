@@ -1,0 +1,53 @@
+{
+  "division": {
+    "name": "Truck Header",
+    "formelements": [
+      {
+        "label": "License Number",
+        "id": "license",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "registration",
+        "label": "Registration Date",
+        "control": "date",
+        "validate": "datetime"
+      },
+      {
+        "id": "Time",
+        "label": "VIN Number",
+        "control": "textbox",
+        "validate": "time"
+      },
+      {
+        "id": "chassisNo",
+        "label": "Engine/ Chassis Number",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+
+      {
+        "id": "address",
+        "label": "Registered Address",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "Next",
+        "label": "Next",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "control": "button",
+        "redirect": "polist"
+      }
+    ]
+  }
+}

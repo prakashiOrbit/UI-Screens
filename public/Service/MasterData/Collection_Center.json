@@ -1,0 +1,40 @@
+{
+  "division": {
+    "name": "Collection Header",
+    "formelements": [
+      {
+        "label": "Center Name",
+        "id": "name",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      },
+      {
+        "label": "Center Address",
+        "id": "address",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "label": "Contact",
+        "id": "contact",
+        "control": "textbox",
+        "validate": "number"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "Next",
+        "label": "Next",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "control": "button",
+        "redirect": "polist"
+      }
+    ]
+  }
+}

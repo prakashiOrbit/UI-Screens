@@ -1,0 +1,72 @@
+{
+    "division": {
+      "name": "PO Header",
+      "formelements": [
+        {
+          "id": "PO Fields",
+          "label": "PO Fields",
+          "control": "textbox",
+          "validation": "alphanumeric",
+          "disabled": true
+        },
+        {
+          "id": "poId",
+          "label": "PO number",
+          "control": "textbox"
+        },
+        {
+          "id": "farmerName",
+          "label": "Farmer Name",
+          "control": "textbox"
+        },
+        {
+          "id": "collection_center_name",
+          "label": "Collection centre name",
+          "control": "textbox",
+          "validate": "alphanumeric"
+        },
+        {
+          "id": "produce",
+          "label": "Produce",
+          "control": "textbox",
+          "validate": "alphanumeric"
+        },
+        {
+          "id": "quantity",
+          "label": "Quantity",
+          "control": "textbox",
+          "validate": "alphanumeric"
+        },
+  
+        {
+          "id": "pickup_Date",
+          "label": "Pickup Date",
+          "control": "textbox",
+          "validate": "alphanumeric"
+        },
+        {
+          "id": "payment_Status",
+          "label": "Payment status",
+          "control": "textbox",
+          "validate": "alphanumeric"
+        }
+      ],
+      "buttons": [
+        {
+          "id": "create",
+          "label": "Create",
+          "control": "button",
+          "validationjs": "validatedata",
+          
+          "submitURL": "http://localhost:9082/apptest/POFlow/CreatePrime"
+        },
+        {
+          "id": "cancel",
+          "label": "Cancel",
+          "control": "button",
+          "redirect": "polist"
+        }
+      ]
+    }
+  }
+  

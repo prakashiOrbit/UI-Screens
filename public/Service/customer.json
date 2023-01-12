@@ -1,0 +1,32 @@
+{
+  "division": {
+    "name": "CO Header",
+    "formelements": [
+      {
+        "id": "co",
+        "label": "CO Number",
+        "control": "textbox",
+        "validation": "alphanumeric",
+        "disabled": true
+      },
+      {
+        "id": "name",
+        "label": "Customer Name",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "ordervalue",
+        "label": "Order Value",
+        "control": "textbox"
+      },
+
+      {
+        "id": "address",
+        "label": "Address",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      }
+    ]
+  }
+}

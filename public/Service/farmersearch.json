@@ -1,0 +1,29 @@
+{
+  "division": {
+    "name": "Farmer Header",
+    "formelements": [
+      {
+        "id": "FID",
+        "label": "Farmer ID",
+        "control": "textbox",
+        "validation": "alphanumeric",
+        "disabled": true
+      },
+      {
+        "id": "name",
+        "label": "Farmer Name",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "search",
+        "label": "Search",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "https://localhost/createPO"
+      }
+    ]
+  }
+}

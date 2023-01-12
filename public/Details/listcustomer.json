@@ -1,0 +1,21 @@
+{
+  "headCells": [
+    {
+      "headerLabel": "CO Number",
+      "dataAttribute": "co",
+      "control": "link"
+    },
+    {
+      "headerLabel": "Customer Name",
+      "dataAttribute": "customername"
+    },
+    {
+      "headerLabel": "Order Value",
+      "dataAttribute": "ordervalue"
+    },
+    {
+      "headerLabel": "Address",
+      "dataAttribute": "address"
+    }
+  ]
+}

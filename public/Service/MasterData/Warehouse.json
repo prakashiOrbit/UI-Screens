@@ -1,0 +1,48 @@
+{
+  "division": {
+    "name": "Warehouse Header",
+    "formelements": [
+      {
+        "label": "SKU",
+        "id": "sku",
+        "control": "textbox",
+        "validation": "alphanumeric",
+        "disabled": true
+      },
+      {
+        "label": "Item Name",
+        "id": "name",
+        "control": "select",
+        "populateURL": "./Service/PopulateBank.json"
+      },
+      {
+        "label": "Supplier Name",
+        "id": "name",
+        "control": "select",
+        "validate": "alphanumeric"
+      },
+
+      {
+        "label": "Supplier Id",
+        "id": "id",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      }
+    ],
+    "buttons": [
+      {
+        "id": "Next",
+        "label": "Next",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+      },
+      {
+        "id": "cancel",
+        "label": "Cancel",
+        "control": "button",
+        "redirect": "polist"
+      }
+    ]
+  }
+}
