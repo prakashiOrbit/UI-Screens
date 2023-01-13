@@ -8,7 +8,7 @@ export const sideMenu = [
       },
       {
         text: "List",
-        link: "/list",
+        link: "/farmerList",
       },
     ],
   },
@@ -21,7 +21,7 @@ export const sideMenu = [
       },
       {
         text: "List",
-        link: "/list",
+        link: "/poList",
       },
     ],
   },
@@ -30,7 +30,7 @@ export const sideMenu = [
     options: [
       {
         text: "Product",
-        link: "/list",
+        link: "/productList",
       },
       {
         text: "Truck",

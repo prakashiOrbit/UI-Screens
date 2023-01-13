@@ -29,6 +29,13 @@
         "control": "button",
         "validationjs": "validatedata",
         "submitURL": "https://localhost/createPO"
+      },
+      {
+        "id": "create",
+        "label": "Create",
+        "control": "button",
+        "validationjs": "validatedata",
+        "submitURL": "https://localhost/createPO"
       }
     ]
   }

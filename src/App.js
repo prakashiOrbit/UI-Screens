@@ -20,12 +20,13 @@ const App = () => {
   const farmerList = "/Details/listFarmer.json";
   const farmerSearch = "/Service/farmersearch.json";
   const poFields = "/Service/po.json";
-  const poList = "/Details/listPo";
+  const poList = "/Details/listPo.json";
   const poSearch = "/Service/posearch.json";
-  // const fieldss = "/Service/truck.json";
-  // const prodlist = "/Details/productlist.json";
-  // const prodserch = "/Service/prodsearch.json";
+  const productFields = "/Service/MasterData/product.json";
+  const productList = "/Details/productlist.json";
+  const productSearch = "/Service/prodsearch.json";
   // const customr = "/Service/customer.json";
+  // const fieldss = "/Service/truck.json";
 
   const navigate = useNavigate();
   useEffect(() => {
@@ -37,14 +38,13 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route path="/farmer" element={<Farmer />} />
-          {/* <Route path="/po" element={<Po />} />
-        <Route path="/truck" element={<Truck />} />
+          {/*<Route path="/truck" element={<Truck />} />
         <Route path="/Product" element={<Product />} />
         <Route path="/Warehouse" element={<Warehouse />} />
         <Route path="/Collection_Center" element={<Collection_Center />} />
         <Route path="/Customer" element={<Customer />} /> */}
           <Route
-            path="/list"
+            path="/farmerList"
             element={
               <FormView
                 aev={"list"}
@@ -104,7 +104,7 @@ const App = () => {
           <Route path="/po" element={<Po />} />
 
           <Route
-            path="/list"
+            path="/poList"
             element={
               <FormView
                 aev={"list"}
@@ -152,6 +152,67 @@ const App = () => {
                 list={poList}
                 getApi={getApi}
                 search={poSearch}
+                postApi={postApi}
+              />
+            }
+          />
+          {/* <Route path="/test/:aev" element={<FormView fields={fields} list={list} />} />
+        <Route path="/test/:aev" element={<FormView fields={fields} list={list} />} /> */}
+        </Route>
+      </Routes>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/Product" element={<Product />} />
+
+          <Route
+            path="/productList"
+            element={
+              <FormView
+                aev={"list"}
+                fields={productFields}
+                list={productList}
+                search={productSearch}
+                getApi={getApi}
+                postApi={postApi}
+              />
+            }
+          />
+          <Route
+            path="/create"
+            element={
+              <FormView
+                aev={"add"}
+                fields={productFields}
+                list={productList}
+                search={productSearch}
+                getApi={getApi}
+                postApi={postApi}
+              />
+            }
+          />
+          <Route
+            path="/test/view"
+            element={
+              <FormView
+                aev={"view"}
+                fields={productFields}
+                list={productList}
+                navigate={navigate}
+                search={productSearch}
+                getApi={getApi}
+                postApi={postApi}
+              />
+            }
+          />
+          <Route
+            path="/test/edit"
+            element={
+              <FormView
+                aev={"edit"}
+                fields={productFields}
+                list={productList}
+                getApi={getApi}
+                search={productSearch}
                 postApi={postApi}
               />
             }

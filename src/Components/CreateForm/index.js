@@ -250,6 +250,14 @@ export class FormView extends Component {
                     >
                       Search
                     </Button>
+                    <Button
+                      fullWidth
+                      onClick={this.handleSearchButton}
+                      style={{ marginLeft: 10 }}
+                      variant="contained"
+                    >
+                      Create
+                    </Button>
                   </div>
                 </div>
                 {/* <EnhancedTable inputDetails={this.state.inputDetails} selected={this.state.selected} state={this.state}
