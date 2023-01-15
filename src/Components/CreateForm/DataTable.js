@@ -219,13 +219,7 @@ export default function EnhancedTable({
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
   const naviagte = useNavigate();
   console.log(state, "state from data tab");
-  React.useEffect(() => {
-    // const selectedData = Object.keys(inputDetails).length && inputDetails.data.filter((row) => {
-    //   return row[0] == selected[0]
-    // })
-    // Object.keys(inputDetails).length && setView([[...inputDetails.headCells], [...selectedData]])
-    //naviagte("/view")
-  }, [selected]);
+  React.useEffect(() => {}, [selected]);
 
   const setViewState = async () => {
     const selectedData =

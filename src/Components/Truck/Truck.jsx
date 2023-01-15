@@ -31,7 +31,7 @@ class Truck extends React.Component {
             <FormView
               aev="add"
               fields={"/Service/MasterData/truck.json"}
-              search={"/Service/posearch.json"}
+              search={"/Service/truckSearch.json"}
               getApi={getApi}
               postApi={
                 this.state.functions.current

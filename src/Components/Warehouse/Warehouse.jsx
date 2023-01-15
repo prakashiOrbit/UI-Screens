@@ -31,7 +31,7 @@ class Warehouse extends React.Component {
             <FormView
               aev="add"
               fields={"/Service/MasterData/Warehouse.json"}
-              search={"/Service/posearch.json"}
+              search={"/Service/warehouseSearch.json"}
               getApi={getApi}
               postApi={
                 this.state.functions.current

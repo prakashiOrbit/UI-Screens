@@ -1,10 +1,16 @@
 {
   "division": {
-    "name": "Product Header",
+    "name": "Customer Header",
     "formelements": [
       {
-        "id": "Item Name",
-        "label": "Item Name",
+        "id": "CO Number",
+        "label": "number",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      },
+      {
+        "id": "Customer Name",
+        "label": "name",
         "control": "textbox",
         "validation": "alphanumeric",
         "disabled": true

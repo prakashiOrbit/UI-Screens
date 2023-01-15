@@ -23,8 +23,8 @@
     ],
     "buttons": [
       {
-        "id": "Next",
-        "label": "Next",
+        "id": "Create",
+        "label": "create",
         "control": "button",
         "validationjs": "validatedata",
         "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"

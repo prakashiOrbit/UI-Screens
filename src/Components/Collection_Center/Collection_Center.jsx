@@ -31,7 +31,7 @@ class Collection_Center extends React.Component {
             <FormView
               aev="add"
               fields={"/Service/MasterData/product.json"}
-              search={"/Service/posearch.json"}
+              search={"/Service/centerSearch.json"}
               getApi={getApi}
               postApi={
                 this.state.functions.current

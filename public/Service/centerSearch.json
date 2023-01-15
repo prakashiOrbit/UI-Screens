@@ -3,8 +3,14 @@
     "name": "Product Header",
     "formelements": [
       {
-        "id": "Item Name",
-        "label": "Item Name",
+        "id": "Center Name",
+        "label": "Center Name",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      },
+      {
+        "id": "Center Address",
+        "label": "Center Address",
         "control": "textbox",
         "validation": "alphanumeric",
         "disabled": true

@@ -243,7 +243,6 @@ export class FormView extends Component {
                   )}
                   <div>
                     <Button
-                      fullWidth
                       onClick={this.handleSearchButton}
                       style={{ marginLeft: 10 }}
                       variant="contained"
@@ -251,9 +250,8 @@ export class FormView extends Component {
                       Search
                     </Button>
                     <Button
-                      fullWidth
                       onClick={this.handleSearchButton}
-                      style={{ marginLeft: 10 }}
+                      style={{ marginLeft: 30 }}
                       variant="contained"
                     >
                       Create

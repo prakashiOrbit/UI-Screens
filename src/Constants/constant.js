@@ -34,15 +34,15 @@ export const sideMenu = [
       },
       {
         text: "Truck",
-        link: "/list",
+        link: "/truckList",
       },
       {
         text: "Collection Center",
-        link: "/list",
+        link: "/centerList",
       },
       {
         text: "Warehouse",
-        link: "/list",
+        link: "/warehouseList",
       },
     ],
   },
@@ -51,7 +51,7 @@ export const sideMenu = [
     options: [
       {
         text: "View Order",
-        link: "/list",
+        link: "/customerList",
       },
     ],
   },

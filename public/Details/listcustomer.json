@@ -17,5 +17,32 @@
       "headerLabel": "Address",
       "dataAttribute": "address"
     }
+  ],
+
+  "data": [
+    {
+      "co": 1,
+      "customername": "Pankaj",
+      "ordervalue": "5",
+      "address": "Bangalore"
+    },
+    {
+      "co": 2,
+      "customername": "Moshami",
+      "ordervalue": "2",
+      "address": "Kerala"
+    },
+    {
+      "co": 3,
+      "customername": "Rashmi",
+      "ordervalue": "1",
+      "address": "Tamil Nadu"
+    },
+    {
+      "co": 4,
+      "customername": "Prathibha",
+      "ordervalue": "10",
+      "address": "Bangalore"
+    }
   ]
 }

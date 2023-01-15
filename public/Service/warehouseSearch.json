@@ -1,10 +1,16 @@
 {
   "division": {
-    "name": "Product Header",
+    "name": "Warehouse Header",
     "formelements": [
       {
-        "id": "Item Name",
-        "label": "Item Name",
+        "id": "SKU",
+        "label": "SKU",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      },
+      {
+        "id": "Supplier Id",
+        "label": "Supplier Id",
         "control": "textbox",
         "validation": "alphanumeric",
         "disabled": true

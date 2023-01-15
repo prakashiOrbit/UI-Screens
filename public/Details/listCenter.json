@@ -1,0 +1,34 @@
+{
+  "headCells": [
+    {
+      "headerLabel": "Center Name",
+      "dataAttribute": "name",
+      "control": "link"
+    },
+    {
+      "headerLabel": "Center Address",
+      "dataAttribute": "address"
+    },
+    {
+      "headerLabel": "Contact",
+      "dataAttribute": "contact"
+    }
+  ],
+  "data": [
+    {
+      "name": "Manish",
+      "address": "Kerala",
+      "contact": "8239569588"
+    },
+    {
+      "name": "Aashish",
+      "address": "Tamil Nadu",
+      "contact": "9939569588"
+    },
+    {
+      "name": "Satish",
+      "address": "Ponducherry",
+      "contact": "7639569588"
+    }
+  ]
+}

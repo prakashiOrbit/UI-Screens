@@ -1,37 +1,32 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { alpha } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableHead from '@mui/material/TableHead';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import TableSortLabel from '@mui/material/TableSortLabel';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Paper from '@mui/material/Paper';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import Tooltip from '@mui/material/Tooltip';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Switch from '@mui/material/Switch';
-import DeleteIcon from '@mui/icons-material/Delete';
-import ViewListIcon from '@mui/icons-material/ViewList';
-import FilterListIcon from '@mui/icons-material/FilterList';
-import { visuallyHidden } from '@mui/utils';
-import { useNavigate } from 'react-router-dom';
-
+import * as React from "react";
+import PropTypes from "prop-types";
+import { alpha } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableHead from "@mui/material/TableHead";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
+import TableSortLabel from "@mui/material/TableSortLabel";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Paper from "@mui/material/Paper";
+import Checkbox from "@mui/material/Checkbox";
+import IconButton from "@mui/material/IconButton";
+import Tooltip from "@mui/material/Tooltip";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
+import DeleteIcon from "@mui/icons-material/Delete";
+import ViewListIcon from "@mui/icons-material/ViewList";
+import FilterListIcon from "@mui/icons-material/FilterList";
+import { visuallyHidden } from "@mui/utils";
+import { useNavigate } from "react-router-dom";
 
 function createData() {
-  return {
-
-  };
+  return {};
 }
-
-
 
 function descendingComparator(a, b, orderBy) {
   if (b[orderBy] < a[orderBy]) {
@@ -44,7 +39,7 @@ function descendingComparator(a, b, orderBy) {
 }
 
 function getComparator(order, orderBy) {
-  return order === 'desc'
+  return order === "desc"
     ? (a, b) => descendingComparator(a, b, orderBy)
     : (a, b) => -descendingComparator(a, b, orderBy);
 }
@@ -63,11 +58,16 @@ function stableSort(array, comparator) {
   return stabilizedThis.map((el) => el[0]);
 }
 
-
-
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort, inputDetails } =
-    props;
+  const {
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+    inputDetails,
+  } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -77,7 +77,6 @@ function EnhancedTableHead(props) {
     <TableHead>
       <TableRow>
         <TableCell padding="checkbox">
-
           {/* <Checkbox
             color="primary"
             indeterminate={numSelected > 0 && numSelected < rowCount}
@@ -88,9 +87,8 @@ function EnhancedTableHead(props) {
             }}
           /> */}
         </TableCell>
-        {
-          Object.keys(inputDetails).length ? (
-            inputDetails.headCells.map((headCell, index) => (
+        {Object.keys(inputDetails).length
+          ? inputDetails.headCells.map((headCell, index) => (
               <TableCell
               // key={headCell.id}
               // align={headCell.numeric ? 'right' : 'left'}
@@ -111,8 +109,7 @@ function EnhancedTableHead(props) {
                 </TableSortLabel>
               </TableCell>
             ))
-          ) : (null)
-        }
+          : null}
       </TableRow>
     </TableHead>
   );
@@ -122,20 +119,19 @@ EnhancedTableHead.propTypes = {
   numSelected: PropTypes.number.isRequired,
   onRequestSort: PropTypes.func.isRequired,
   onSelectAllClick: PropTypes.func.isRequired,
-  order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+  order: PropTypes.oneOf(["asc", "desc"]).isRequired,
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
 
 function EnhancedTableToolbar(props) {
-
   const { numSelected, handleViewButton, setViewState } = props;
-  const navigation = useNavigate()
+  const navigation = useNavigate();
   const handleViewButtonClick = () => {
     //navigation("../form/view")
-    navigation("../test/view")
-    setViewState()
-  }
+    navigation("../test/view");
+    setViewState();
+  };
 
   return (
     <Toolbar
@@ -144,13 +140,16 @@ function EnhancedTableToolbar(props) {
         pr: { xs: 1, sm: 1 },
         ...(numSelected > 0 && {
           bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
+            alpha(
+              theme.palette.primary.main,
+              theme.palette.action.activatedOpacity
+            ),
         }),
       }}
     >
       {numSelected > 0 ? (
         <Typography
-          sx={{ flex: '1 1 100%' }}
+          sx={{ flex: "1 1 100%" }}
           color="inherit"
           variant="subtitle1"
           component="div"
@@ -159,7 +158,7 @@ function EnhancedTableToolbar(props) {
         </Typography>
       ) : (
         <Typography
-          sx={{ flex: '1 1 100%' }}
+          sx={{ flex: "1 1 100%" }}
           variant="h6"
           id="tableTitle"
           component="div"
@@ -172,7 +171,7 @@ function EnhancedTableToolbar(props) {
         <>
           <Tooltip title="View">
             <IconButton onClick={handleViewButtonClick}>
-              < ViewListIcon />
+              <ViewListIcon />
             </IconButton>
           </Tooltip>
           <Tooltip title="Delete">
@@ -197,50 +196,53 @@ EnhancedTableToolbar.propTypes = {
   numSelected: PropTypes.number.isRequired,
 };
 
-export default function EnhancedTable({ inputDetails, selected, setSelected, state, setView }) {
+export default function EnhancedTable({
+  inputDetails,
+  selected,
+  setSelected,
+  state,
+  setView,
+}) {
   console.log(inputDetails, "data table");
-  const [order, setOrder] = React.useState('asc');
-  const [orderBy, setOrderBy] = React.useState('calories');
+  const [order, setOrder] = React.useState("asc");
+  const [orderBy, setOrderBy] = React.useState("calories");
   // const [selected, setSelected] = React.useState([]);
   const [page, setPage] = React.useState(0);
   const [dense, setDense] = React.useState(false);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
-  const naviagte = useNavigate()
-  console.log(state,"state from data tab");
+  const naviagte = useNavigate();
+  console.log(state, "state from data tab");
   React.useEffect(() => {
     // const selectedData = Object.keys(inputDetails).length && inputDetails.data.filter((row) => {
     //   return row[0] == selected[0]
-
     // })
-
     // Object.keys(inputDetails).length && setView([[...inputDetails.headCells], [...selectedData]])
     //naviagte("/view")
-  }, [selected])
+  }, [selected]);
 
   const setViewState = async () => {
-
-    const selectedData = Object.keys(inputDetails).length && inputDetails.data.filter((row) => {
-      return row[0] == selected[0]
-
-    })
+    const selectedData =
+      Object.keys(inputDetails).length &&
+      inputDetails.data.filter((row) => {
+        return row[0] == selected[0];
+      });
     setTimeout(() => {
       console.log("Timeout >>>>>>>>>>>>>>");
-      Object.keys(inputDetails).length && setView([[...inputDetails.headCells], [...selectedData]])
-    }, 1000)
-
-  }
+      Object.keys(inputDetails).length &&
+        setView([[...inputDetails.headCells], [...selectedData]]);
+    }, 1000);
+  };
   const handleRequestSort = (event, property) => {
-    const isAsc = orderBy === property && order === 'asc';
-    setOrder(isAsc ? 'desc' : 'asc');
+    const isAsc = orderBy === property && order === "asc";
+    setOrder(isAsc ? "desc" : "asc");
     setOrderBy(property);
   };
 
   const handleSelectAllClick = (event) => {
     if (event.target.checked) {
-
-
-      const newSelected = Object.keys(inputDetails).length && inputDetails.data.map((n) => n);
-      state.selected = newSelected
+      const newSelected =
+        Object.keys(inputDetails).length && inputDetails.data.map((n) => n);
+      state.selected = newSelected;
       //setSelected(newSelected);
       return;
     }
@@ -261,7 +263,7 @@ export default function EnhancedTable({ inputDetails, selected, setSelected, sta
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
     //state.selected = newSelected
@@ -282,22 +284,33 @@ export default function EnhancedTable({ inputDetails, selected, setSelected, sta
   };
   const handleViewButton = () => {
     console.log("view btn");
-  }
+  };
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
   const emptyRows =
-    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - Object.keys(inputDetails).length ? inputDetails.data.length : 0) : 0;
+    page > 0
+      ? Math.max(
+          0,
+          (1 + page) * rowsPerPage - Object.keys(inputDetails).length
+            ? inputDetails.data.length
+            : 0
+        )
+      : 0;
 
   return (
-    <Box sx={{ width: '100%' }}>
-      <Paper sx={{ width: '100%', mb: 2 }}>
-        <EnhancedTableToolbar numSelected={selected.length} handleViewButton={handleViewButton} setViewState={setViewState} />
+    <Box sx={{ width: "100%" }}>
+      <Paper sx={{ width: "100%", mb: 2 }}>
+        <EnhancedTableToolbar
+          numSelected={selected.length}
+          handleViewButton={handleViewButton}
+          setViewState={setViewState}
+        />
         <TableContainer>
           <Table
             sx={{ minWidth: 750 }}
             aria-labelledby="tableTitle"
-            size={dense ? 'small' : 'medium'}
+            size={dense ? "small" : "medium"}
           >
             <EnhancedTableHead
               inputDetails={inputDetails}
@@ -306,46 +319,43 @@ export default function EnhancedTable({ inputDetails, selected, setSelected, sta
               orderBy={orderBy}
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
-              rowCount={Object.keys(inputDetails).length ? inputDetails.data.length : 0}
+              rowCount={
+                Object.keys(inputDetails).length ? inputDetails.data.length : 0
+              }
             />
             <TableBody>
               {/* if you don't need to support IE11, you can replace the `stableSort` call with:
                  rows.sort(getComparator(order, orderBy)).slice() */}
-              {
-                Object.keys(inputDetails).length ? (
-                  stableSort(inputDetails.data, getComparator(order, orderBy))
-                    .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
-                    .map((row, index) => {
-                      const isItemSelected = isSelected(row[0]);
-                      const labelId = `enhanced-table-checkbox-${index}`;
+              {Object.keys(inputDetails).length ? (
+                stableSort(inputDetails.data, getComparator(order, orderBy))
+                  .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  .map((row, index) => {
+                    const isItemSelected = isSelected(row[0]);
+                    const labelId = `enhanced-table-checkbox-${index}`;
 
-                      return (
-                        <TableRow
-                          hover
-                          onClick={(event) => handleClick(event, row[0])}
-                          role="checkbox"
-                          aria-checked={isItemSelected}
-                          tabIndex={-1}
-                          key={row[index]}
-                          selected={isItemSelected}
-                        >
-                          <TableCell padding="checkbox">
-                            <Checkbox
-                              color="primary"
-                              checked={isItemSelected}
-                              inputProps={{
-                                'aria-labelledby': labelId,
-                              }}
-                            />
-                          </TableCell>
-                          {
-                            row.map((item, index) => {
-                              return (
-                                <TableCell align="right">{item}</TableCell>
-                              )
-                            })
-                          }
-                          {/* <TableCell
+                    return (
+                      <TableRow
+                        hover
+                        onClick={(event) => handleClick(event, row[0])}
+                        role="checkbox"
+                        aria-checked={isItemSelected}
+                        tabIndex={-1}
+                        key={row[index]}
+                        selected={isItemSelected}
+                      >
+                        <TableCell padding="checkbox">
+                          <Checkbox
+                            color="primary"
+                            checked={isItemSelected}
+                            inputProps={{
+                              "aria-labelledby": labelId,
+                            }}
+                          />
+                        </TableCell>
+                        {row.map((item, index) => {
+                          return <TableCell align="right">{item}</TableCell>;
+                        })}
+                        {/* <TableCell
                         component="th"
                         id={labelId}
                         scope="row"
@@ -357,11 +367,12 @@ export default function EnhancedTable({ inputDetails, selected, setSelected, sta
                       <TableCell align="right">{row.fat}</TableCell>
                       <TableCell align="right">{row.carbs}</TableCell>
                       <TableCell align="right">{row.protein}</TableCell> */}
-                        </TableRow>
-                      );
-                    })
-                ) : (<></>)
-              }
+                      </TableRow>
+                    );
+                  })
+              ) : (
+                <></>
+              )}
               {emptyRows > 0 && (
                 <TableRow
                   style={{
@@ -377,7 +388,9 @@ export default function EnhancedTable({ inputDetails, selected, setSelected, sta
         <TablePagination
           rowsPerPageOptions={[5, 10, 25]}
           component="div"
-          count={Object.keys(inputDetails).length ? inputDetails.data.length : 0}
+          count={
+            Object.keys(inputDetails).length ? inputDetails.data.length : 0
+          }
           rowsPerPage={rowsPerPage}
           page={page}
           onPageChange={handleChangePage}

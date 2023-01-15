@@ -3,8 +3,14 @@
     "name": "Product Header",
     "formelements": [
       {
-        "id": "Item Name",
-        "label": "Item Name",
+        "id": "Licence Number",
+        "label": "Licence Number",
+        "control": "textbox",
+        "validation": "alphanumeric"
+      },
+      {
+        "id": "Vin Number",
+        "label": "Vin Number",
         "control": "textbox",
         "validation": "alphanumeric",
         "disabled": true
