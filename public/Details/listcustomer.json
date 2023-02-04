@@ -14,8 +14,16 @@
       "dataAttribute": "ordervalue"
     },
     {
-      "headerLabel": "Address",
-      "dataAttribute": "address"
+      "headerLabel": "Status",
+      "dataAttribute": "status"
+    },
+    {
+      "headerLabel": "Action",
+      "dataAttribute": "action"
+    },
+    {
+      "headerLabel": "Warehouse",
+      "dataAttribute": "warehouse"
     }
   ],
 
@@ -24,25 +32,33 @@
       "co": 1,
       "customername": "Pankaj",
       "ordervalue": "5",
-      "address": "Bangalore"
+      "status": "Available",
+      "action": "Y",
+      "warehouse": "Bangalore"
     },
     {
       "co": 2,
-      "customername": "Moshami",
-      "ordervalue": "2",
-      "address": "Kerala"
+      "customername": "Pankaj",
+      "ordervalue": "1",
+      "status": "Available",
+      "action": "Y",
+      "warehouse": "Kerala"
     },
     {
       "co": 3,
-      "customername": "Rashmi",
-      "ordervalue": "1",
-      "address": "Tamil Nadu"
+      "customername": "Pankaj",
+      "ordervalue": "5",
+      "status": "NotAvailable",
+      "action": "N",
+      "warehouse": "Kochi"
     },
     {
       "co": 4,
-      "customername": "Prathibha",
+      "customername": "Swati",
       "ordervalue": "10",
-      "address": "Bangalore"
+      "status": "Available",
+      "action": "Y",
+      "warehouse": "Trichy"
     }
   ]
 }

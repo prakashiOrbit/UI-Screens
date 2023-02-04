@@ -12,15 +12,15 @@ import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
-import ListItem from "@mui/material/ListItem";
+//import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { Navigate, Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import ListAltRoundedIcon from "@mui/icons-material/ListAltRounded";
 import PlaylistAddRoundedIcon from "@mui/icons-material/PlaylistAddRounded";
-import EventBusyRoundedIcon from "@mui/icons-material/EventBusyRounded";
-import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
+//import EventBusyRoundedIcon from "@mui/icons-material/EventBusyRounded";
+//import PlaylistAddCheckRoundedIcon from "@mui/icons-material/PlaylistAddCheckRounded";
 import { ExpandLess, ExpandMore } from "@mui/icons-material";
 import SmartConnect from "../Components/Url/SmartConnect";
 import { sideMenu } from "../Constants/constant";
@@ -111,7 +111,7 @@ export default function Layout() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap component="div">
-            Fresh2Rely
+            Home
           </Typography>
         </Toolbar>
       </AppBar>
@@ -130,6 +130,7 @@ export default function Layout() {
       >
         <DrawerHeader>
           <IconButton onClick={handleDrawerClose}>
+            Fresh2Rely
             {theme.direction === "ltr" ? (
               <ChevronLeftIcon />
             ) : (
@@ -137,7 +138,9 @@ export default function Layout() {
             )}
           </IconButton>
         </DrawerHeader>
+
         <Divider />
+
         <List>
           {sideMenu.map((item, index) => (
             <>

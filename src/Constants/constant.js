@@ -3,11 +3,11 @@ export const sideMenu = [
     text: "Farmer",
     options: [
       {
-        text: "Create",
+        text: "Onboard Farmer",
         link: "/farmer",
       },
       {
-        text: "List",
+        text: "View Farmer",
         link: "/farmerList",
       },
     ],

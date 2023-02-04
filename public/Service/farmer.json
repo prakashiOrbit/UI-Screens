@@ -1,6 +1,6 @@
 {
   "division": {
-    "name": "PO Header",
+    "name": "Farmer Header",
     "formelements": [
       {
         "id": "FID",
@@ -57,7 +57,7 @@
         "label": "Create",
         "control": "button",
         "validationjs": "validatedata",
-        "submitURL": "http://localhost:9082/SmartOwner/AdminSmartFlow/EnableFlow"
+        "submitURL": "http://localhost:8080/api/v1/farmers/createFarmer"
       },
       {
         "id": "cancel",

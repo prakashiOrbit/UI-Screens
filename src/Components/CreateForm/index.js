@@ -43,10 +43,6 @@ export class FormView extends Component {
   handleEditButton() {
     console.log("from handle button");
     const ress = {};
-    const newDescData = this.state.view[0].map((item, index) => {
-      ress[this.state.view[0][index].dataAttribute] =
-        this.state.view[1][0][index];
-    });
     this.setState({
       inputDetails: { ...ress },
     });
@@ -97,10 +93,12 @@ export class FormView extends Component {
     const value = e.target.value;
     const component = this.state.formDetails.division.formelements.filter(
       (item) => {
-        if (item.id == name) return item;
-      }
+        if (item.id === name) return item;
+      },
+      this.state.formDetails.division.formelements.filter((item) => {
+        if (item.id === name) return item;
+      })
     );
-    const isValid = validation(value, component[0].validate);
     console.log(validation(value, component[0].validate), "validation");
     console.log(component, "selected comp");
 
@@ -140,6 +138,7 @@ export class FormView extends Component {
             const array = [];
             resp.data.data.map((item, index) => {
               array.push(Object.values(item));
+              return array;
             });
             const newData = {};
             newData.headCells = resp.data.headCells;
@@ -194,16 +193,85 @@ export class FormView extends Component {
               <>
                 {/* <TableData inputDetails={inputDetails} /> */}
                 <div style={{ display: "flex", alignItems: "center" }}>
-                  {/* <TextField
-                                value={search}
-                                name="search"
-                                id="filled-search"
-                                label="Search field"
-                                type="search"
-                                variant="filled"
-                                onChange={(e) => { handleSearch(e) }}
-                              />
-                              <Button onClick={handleSearchButton} style={{ marginLeft: 10 }} variant="contained">Search</Button> */}
+                  {Object.keys(this.state.searchBar).length ? (
+                    <Grid
+                      container
+                      spacing={5}
+                      style={{
+                        border: "3px solid #ace",
+                        padding: "15px",
+                        boxSizing: "borderBox",
+                        margin: "20px",
+                      }}
+                    >
+                      <Grid
+                        item
+                        xs={10}
+                        style={{
+                          fontSize: "20px",
+                          color: "blue",
+                          fontWeight: "bold",
+                        }}
+                      >
+                        <span>
+                          {this.state.searchBar.division.formelements}
+                        </span>
+                      </Grid>
+                      {this.state.searchBar.division.formelements.map(
+                        (item, index) => {
+                          return (
+                            <div key={index} style={{ width: 200, margin: 5 }}>
+                              {item.control === "select" ? (
+                                <SelectClass
+                                  formDetails={item}
+                                  onChange={this.onChangeSearch}
+                                  inputDetails={this.state.searchInputDetails}
+                                  editFlag={this.props.aev}
+                                />
+                              ) : item.control === "textbox" ? (
+                                <TextFieldClass
+                                  formDetails={item}
+                                  onChange={this.onChangeSearch}
+                                  inputDetails={this.state.searchInputDetails}
+                                  editFlag={this.props.aev}
+                                />
+                              ) : item.control === "date" ? (
+                                <DateClass
+                                  formDetails={item}
+                                  onChange={this.onChangeSearch}
+                                  inputDetails={this.state.searchInputDetails}
+                                  editFlag={this.props.aev}
+                                />
+                              ) : (
+                                <>No Data Box</>
+                              )}
+                              {/* // <FormFields FormDetails={item} onChange={onChange} inputDetails={inputDetails} /> */}
+                            </div>
+                          );
+                        }
+                      )}
+                    </Grid>
+                  ) : (
+                    <div>No Data</div>
+                  )}
+                  {/* <div>
+                    <Button
+                      onClick={this.handleSearchButton}
+                      style={{ marginLeft: 10 }}
+                      variant="contained"
+                    >
+                      Search
+                    </Button>
+                    <Button
+                      onClick={this.handleSearchButton}
+                      style={{ marginLeft: 30 }}
+                      variant="contained"
+                    >
+                      Create
+                    </Button>
+                  </div> */}
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
                   {Object.keys(this.state.searchBar).length ? (
                     this.state.searchBar.division.formelements.map(
                       (item, index) => {
@@ -241,7 +309,7 @@ export class FormView extends Component {
                   ) : (
                     <div>No Data</div>
                   )}
-                  <div>
+                  {/* <div>
                     <Button
                       onClick={this.handleSearchButton}
                       style={{ marginLeft: 10 }}
@@ -256,7 +324,7 @@ export class FormView extends Component {
                     >
                       Create
                     </Button>
-                  </div>
+                  </div> */}
                 </div>
                 {/* <EnhancedTable inputDetails={this.state.inputDetails} selected={this.state.selected} state={this.state}
                                     setSelected={this.setSelected}
@@ -308,6 +376,91 @@ export class FormView extends Component {
               </div>
             ) : (
               <>
+                <Grid container spacing={10}>
+                  {Object.keys(this.state.formDetails).length ? (
+                    ((
+                      <Grid
+                        container
+                        spacing={4}
+                        style={{
+                          border: "3px solid #ace",
+                          padding: "15px",
+                          boxSizing: "borderBox",
+                          margin: "20px",
+                        }}
+                      >
+                        <Grid
+                          item
+                          xs={10}
+                          style={{
+                            fontSize: "20px",
+                            color: "blue",
+                            fontWeight: "bold",
+                          }}
+                        >
+                          <span>
+                            {this.state.formDetails.division.formelements}
+                          </span>
+                        </Grid>
+                      </Grid>
+                    ),
+                    this.state.formDetails.division.formelements.map(
+                      (item, index) => {
+                        return (
+                          <Grid key={index} item xs={12} sm={4}>
+                            {item.control === "select" ? (
+                              <SelectClass
+                                formDetails={item}
+                                onChange={this.onChange}
+                                inputDetails={this.state.inputDetails}
+                                editFlag={this.props.aev}
+                              />
+                            ) : item.control === "textbox" ? (
+                              <TextFieldClass
+                                formDetails={item}
+                                onChange={this.onChange}
+                                inputDetails={this.state.inputDetails}
+                                editFlag={this.props.aev}
+                                formErrors={this.state.formErrors}
+                              />
+                            ) : item.control === "date" ? (
+                              <DateClass
+                                formDetails={item}
+                                onChange={this.onChange}
+                                inputDetails={this.state.inputDetails}
+                                editFlag={this.props.aev}
+                              />
+                            ) : (
+                              <>No Data Box</>
+                            )}
+                            {/* // <FormFields FormDetails={item} onChange={onChange} inputDetails={inputDetails} /> */}
+                          </Grid>
+                        );
+                      }
+                    ))
+                  ) : (
+                    <div>No Data</div>
+                  )}
+                  {Object.keys(this.state.formDetails).length ? (
+                    this.state.formDetails.division.buttons.map(
+                      (item, index) => {
+                        return (
+                          <Grid key={index} item xs={12} sm={3}>
+                            {/* <ButtonClass
+                              formDetails={item}
+                              showData={this.showData}
+                              inputDetails={this.state.inputDetails}
+                              aev={this.props.aev}
+                            /> */}
+                            {/* <Buttons formDetails={item} showData={showData} inputDetails={inputDetails} aev={aev} /> */}
+                          </Grid>
+                        );
+                      }
+                    )
+                  ) : (
+                    <div>No Data</div>
+                  )}
+                </Grid>
                 <Grid container spacing={10}>
                   {Object.keys(this.state.formDetails).length ? (
                     this.state.formDetails.division.formelements.map(

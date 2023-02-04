@@ -22,8 +22,20 @@
       },
 
       {
-        "id": "address",
-        "label": "Address",
+        "id": "status",
+        "label": "Status",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "action",
+        "label": "Action",
+        "control": "textbox",
+        "validate": "alphanumeric"
+      },
+      {
+        "id": "warehouse",
+        "label": "Warehouse",
         "control": "textbox",
         "validate": "alphanumeric"
       }
